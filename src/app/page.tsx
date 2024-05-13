@@ -1,36 +1,34 @@
 import Link from "next/link";
 
+const mockUrls = [
+  "https://utfs.io/f/b1aba7d6-4157-443c-b095-3b5fd4ebbacb-grmb46.jpg",
+  "https://utfs.io/f/b1aba7d6-4157-443c-b095-3b5fd4ebbacb-grmb46.jpg",
+  "https://utfs.io/f/b1aba7d6-4157-443c-b095-3b5fd4ebbacb-grmb46.jpg",
+];
+
+const mockImages = mockUrls.map((url, index) => ({
+  id: index,
+  url,
+}));
+
 export default function HomePage() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
-      <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16 ">
-        <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-[5rem]">
-          Create <span className="text-[hsl(280,100%,70%)]">T3</span> App
-        </h1>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">
-          <Link
-            className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"
-            href="https://create.t3.gg/en/usage/first-steps"
-            target="_blank"
+      <h1 className="mb-4 text-4xl font-bold">🏠 Home Page</h1>
+      <Link href="/monkey"> Go to Monkey Page</Link>
+      <div className="flex flex-wrap">
+        {[...mockImages, ...mockImages].map((image) => (
+          <div
+            key={image.id}
+            className="w-1/2 p-2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6"
           >
-            <h3 className="text-2xl font-bold">First Steps →</h3>
-            <div className="text-lg">
-              Just the basics - Everything you need to know to set up your
-              database and authentication.
-            </div>
-          </Link>
-          <Link
-            className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"
-            href="https://create.t3.gg/en/introduction"
-            target="_blank"
-          >
-            <h3 className="text-2xl font-bold">Documentation →</h3>
-            <div className="text-lg">
-              Learn more about Create T3 App, the libraries it uses, and how to
-              deploy it.
-            </div>
-          </Link>
-        </div>
+            <img
+              src={image.url}
+              alt=""
+              className="h-auto w-full rounded-lg shadow-lg"
+            />
+          </div>
+        ))}
       </div>
     </main>
   );
