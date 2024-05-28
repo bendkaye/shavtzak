@@ -5,7 +5,9 @@ export default function MonkeyLayout({
 }) {
   return (
     <div>
-      <div className="w-full">something on the top of the second route</div>
+      <div className="w-full">
+        something on the top thea[s,xas;l,] second route
+      </div>
       {children}
     </div>
   );

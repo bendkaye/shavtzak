@@ -15,7 +15,7 @@ export default function HomePage() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
       <h1 className="mb-4 text-4xl font-bold">🏠 Home Page</h1>
-      <Link href="/monkey"> Go to Monkey Page</Link>
+      <Link href="/monkey"> Go to Monkey Page </Link>
       <div className="flex flex-wrap">
         {[...mockImages, ...mockImages].map((image) => (
           <div
